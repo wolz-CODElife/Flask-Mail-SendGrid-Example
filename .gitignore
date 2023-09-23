@@ -1,2 +1,8 @@
-.env
-passenger_wsgi.py
+# Python bytecode files
+__pycache__/
+
+# Virtual environment
+venv/
+
+# macOS system file
+.DS_Store
