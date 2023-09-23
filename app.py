@@ -21,8 +21,6 @@ def send_email():
     recipient = json_data.get('recipient')
     if not recipient:
         return jsonify({'message': 'Recipient email is required'}), 400
-    name = json_data.get('name')
-    docid = json_data.get('id')
 
     try:
         msg = Message('EMAIL SUBJECT GOES HERE', recipients=[recipient])
