@@ -1,6 +1,7 @@
 import os
 from flask import Flask, request, jsonify
 from flask_mail import Mail, Message
+from flask_cors import CORS
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'wagmi$@#'
@@ -11,6 +12,7 @@ app.config['MAIL_USERNAME'] = 'apikey' #All sendgrid accounts most use 'apikey' 
 app.config['MAIL_PASSWORD'] = os.environ.get('SENDGRID_API_KEY')
 app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_DEFAULT_SENDER')
 mail = Mail(app)
+CORS(app)
 
 @app.route('/', methods=['POST'])
 def send_email():
